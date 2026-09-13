@@ -1,9 +1,9 @@
-# my_skills
+# self-teaching-skill
 
 可跨 agent 复用的 skill 集合。目前包含一个 skill：
 
-| Skill | 解决的问题 |
-| --- | --- |
+| Skill                                                 | 解决的问题                                                            |
+| ----------------------------------------------------- | ---------------------------------------------------------------- |
 | [`self-teaching-mode`](./self-teaching-mode/SKILL.md) | 当用户以**自我教学**为目的让 AI 生成代码时，强制 AI 先侦查项目、确认用户的前置基础、写教学性注释、真实验证并清理环境 |
 
 > 这个 skill 提炼自一次真实的会话：用户是"看得懂 Python 基础语法、但 FastAPI 忘得差不多了"的学习者，
@@ -33,15 +33,15 @@ my_skills/
 
 ## 兼容性
 
-| Agent | 支持的形态 | 用户级安装路径 | 仓库级安装路径 |
-| --- | --- | --- | --- |
-| **Claude Code** | 目录 + `SKILL.md` | `~/.claude/skills/<name>/SKILL.md` | `.claude/skills/<name>/SKILL.md` |
-| **Codex** | 目录 + `SKILL.md`（Agent Skills 标准） | `~/.agents/skills/<name>/SKILL.md` | `.agents/skills/<name>/SKILL.md` |
-| **Reasonix** | **单文件** `<name>.md` | `~/.reasonix/skills/<name>.md` | `.reasonix/skills/<name>.md` |
+| Agent           | 支持的形态                            | 用户级安装路径                            | 仓库级安装路径                          |
+| --------------- | -------------------------------- | ---------------------------------- | -------------------------------- |
+| **Claude Code** | 目录 + `SKILL.md`                  | `~/.claude/skills/<name>/SKILL.md` | `.claude/skills/<name>/SKILL.md` |
+| **Codex**       | 目录 + `SKILL.md`（Agent Skills 标准） | `~/.agents/skills/<name>/SKILL.md` | `.agents/skills/<name>/SKILL.md` |
+| **Reasonix**    | **单文件** `<name>.md`              | `~/.reasonix/skills/<name>.md`     | `.reasonix/skills/<name>.md`     |
 
 > Claude Code 注意：`skills/` 目录下**不支持单文件** `.md`，必须是 `<name>/SKILL.md` 的目录形式，
 > 且 frontmatter 里的 `name` 必须与目录名完全一致。
->
+> 
 > Codex 注意：`~/.codex/prompts/*.md` 那套自定义 prompt 已被官方标记为**弃用**，
 > 只支持显式 `/prompts:<name>` 调用；现在推荐使用上面的 skills 机制。
 
