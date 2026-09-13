@@ -6,11 +6,6 @@
 | ----------------------------------------------------- | ---------------------------------------------------------------- |
 | [`self-teaching-mode`](./self-teaching-mode/SKILL.md) | 当用户以**自我教学**为目的让 AI 生成代码时，强制 AI 先侦查项目、确认用户的前置基础、写教学性注释、真实验证并清理环境 |
 
-> 这个 skill 提炼自一次真实的会话：用户是"看得懂 Python 基础语法、但 FastAPI 忘得差不多了"的学习者，
-> 要求 AI 在空项目里生成一个 FastAPI + MySQL 增删改查示例。
-> 过程中暴露出的关键点——**先问清基础、注释只讲"为什么"、起临时 MySQL 实例真跑一遍、
-> 验证完把临时环境清干净**——都被固化成了这个 skill 的硬性流程。
-
 ---
 
 ## 目录结构
@@ -141,10 +136,4 @@ cp self-teaching-mode/SKILL.md ~/.reasonix/skills/self-teaching-mode.md
 - **加平台私有字段**：只有 Claude Code 认 `allowed-tools`、Reasonix 认 `runAs`/`scope`。
   为了三平台通用，本 skill 刻意只用 `name` + `description`；如需添加，请确认目标 agent 会忽略未知字段。
 
----
 
-## 说明
-
-- 各 agent 的 skill 发现路径与字段支持仍在演进，路径请以官方文档为准
-  （[Claude Code](https://code.claude.com/docs/en/skills)、[Agent Skills 规范](https://agentskills.io/specification)）。
-- 本目录内容可自由修改、分发。
